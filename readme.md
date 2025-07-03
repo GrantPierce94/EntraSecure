@@ -67,6 +67,6 @@ Built with Python and structured for automation, this project emphasizes secure 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/entrasecure.git
+   git clone https://github.com/GrantPierce94/entrasecure.git
    cd entrasecure
    pip install -r requirements.txt
