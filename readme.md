@@ -70,3 +70,65 @@ Built with Python and structured for automation, this project emphasizes secure 
    git clone https://github.com/GrantPierce94/entrasecure.git
    cd entrasecure
    pip install -r requirements.txt
+
+Fill in the config.py file with your credentials:
+```
+TENANT_ID = 'your-tenant-id'
+CLIENT_ID = 'your-client-id'
+CLIENT_SECRET = 'your-client-secret'
+
+EXCEL_FILE_ID = 'your-excel-file-id'
+EXCEL_WORKSHEET_NAME = 'RawData'
+EXCEL_TABLE_NAME = 'GuestUsers'
+EXCEL_CHART_SHEET = 'Dashboard'
+
+TEAMS_ID = 'your-teams-id'
+TEAMS_CHANNEL_ID = 'your-channel-id'
+```
+
+Run the script:
+```
+python main.py
+```
+
+## Repository Structure
+```
+entra-guest-dashboard/
+├── main.py               # Core workflow: fetch → Excel → chart → Teams
+├── config.py             # Configurable credentials and resource IDs
+├── auth_helper.py        # Graph token management (client credentials)
+├── graph_service.py      # API logic for Entra, Excel, and Teams
+├── requirements.txt      # Python dependency list
+└── README.md             # Project overview and instructions
+```
+
+## Testing & Automation Scope
+Functional testing via manual runs (schedule-ready for CRON or Azure Automation)
+
+Error handling and fallback for empty Excel/chart states
+
+Logging via print/debug mode (upgradeable to log service or SIEM forwarding)
+
+API-level test cases for Graph auth and Excel/Teams connectivity
+
+## Tools & Technologies
+Languages: Python 3.10+
+
+APIs: Microsoft Graph (v1.0)
+
+Libraries: requests, json
+
+DevOps: GitHub, OneDrive, Microsoft Teams
+
+## Contributors
+Grant Pierce (GitHub: @GrantPierce94) – Developer
+
+Designed the guest visibility use case and automation workflow
+
+Implemented secure Microsoft Graph integration using raw REST
+
+Built Excel and Teams integration logic from scratch
+
+Focused on governance use cases relevant to GRC, IAM, and IT Ops
+
+
